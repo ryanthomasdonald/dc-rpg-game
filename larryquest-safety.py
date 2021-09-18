@@ -13,40 +13,22 @@ class Character():
         return life
 
 class Larry(Character):
-    def attack(self, alien1, alien2, alien3):
-        hit = random.randint(1, 5)
-        if hit == 1:
-            alien_hit = "first"
-            alien1.health -= self.power
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 2:
-            alien2.health -= self.power
-            alien_hit = "second"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 3:
-            alien3.health -= self.power
-            alien_hit = "third"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        else:
-            print("Larry missed.")
+    def attack(self, alien1):
+        alien1.health -= self.power
+        print(f"You do {self.power} damage to the alien.")
         if alien1.health <= 0:
             print("The alien is dead.")
 
     def print_status(self):
-        print(f"Larry has {self.health} health and {self.power} power.")
+        print(f"You have {self.health} health and {self.power} power.")
 
 class Dave(Character):
-    def attack(self, alien1, alien2, alien3):
+    def attack(self, alien1):
         alien1.health -= self.power
-        alien2.health -= self.power
-        alien3.health -= self.power
-        print(f"You do {self.power} damage to the aliens.")
+        print(f"You do {self.power} damage to the alien1.")
         if alien1.health <= 0:
             print("The first alien is dead.")
-        if alien2.health <= 0:
-            print("The second alien is dead.")
-        if alien3.health <= 0:
-            print("The third alien is dead.")
+        # if alien2.health 
 
     def print_status(self):
         print(f"Dave has {self.health} health and {self.power} power.")
@@ -54,9 +36,9 @@ class Dave(Character):
 class Alien1(Character):
     def attack(self, larry):
         larry.health -= self.power
-        print(f"The first alien does {self.power} damage to Larry.")
+        print(f"The first alien does {self.power} damage to you.")
         if larry.health <= 0:
-            print("Larry retired prematurely.")
+            print("You are dead.")
 
     def print_status(self):
         print(f"The first alien has {self.health} health and {self.power} power.")
@@ -64,9 +46,9 @@ class Alien1(Character):
 class Alien2(Character):
     def attack(self, larry):
         larry.health -= self.power
-        print(f"The second alien does {self.power} damage to Larry.")
+        print(f"The second alien does {self.power} damage to you.")
         if larry.health <= 0:
-            print("Larry retired prematurely.")
+            print("You are dead.")
 
     def print_status(self):
         print(f"The second alien has {self.health} health and {self.power} power.")
@@ -74,9 +56,9 @@ class Alien2(Character):
 class Alien3(Character):
     def attack(self, larry):
         larry.health -= self.power
-        print(f"The third alien does {self.power} damage to Larry.")
+        print(f"The third alien does {self.power} damage to you.")
         if larry.health <= 0:
-            print("Larry retired prematurely.")
+            print("You are dead.")
 
     def print_status(self):
         print(f"The third alien has {self.health} health and {self.power} power.")
@@ -135,7 +117,7 @@ bottles of suds behind in the fridge. That sure was one hell of a party..."
 (Press "Enter" to walk to the Officer's Quarters.)
 
     The best part about being the senior janitor was that Larry's keycard granted him full
-access to the entire base. (Another alien specimen exploded in the lab you say? "Someone go
+access to the entire base. (Another alien1 specimen exploded in the lab you say? "Someone go
 find Larry." Someone puked in the anti-gravity chamber again? "Say no more! Larry's on it!")
 The Officer's Quarters were all the way on the other side of the facility, so Larry headed
 over that way while Rusty stayed behind to straighten up their neck of the woods.
@@ -151,7 +133,7 @@ distance startled Larry something fierce.
 for sure.
 
     "Terribly sorry about that, bud," said Dave. "They must've turned the lights out to save
-power over the break. Damn... I guess I overslept and missed the shuttle. Well anyway, what
+power over the break. I guess I overslept and missed the shuttle. Damn... Well anyway, what
 are you doing all the way out here? I thought they closed this wing down before the party..."
 
     "I'm headed over to the Officer's Quarters to see if they left any beers in that mini-
@@ -168,7 +150,7 @@ security cameras are still on and that constitutes as stealing from an officer,"
 the accomodations were on this side of the base (for agency standards, at least). The outer
 door of the Officer's Quarters proved to be no obstacle for Larry's keycard and the two
 friends paraded around feeling like kings, if only for a short while. The mini-fridge was
-"hidden" right where they knew it was and sure enough, the brewski gods shined bright upon 
+"hidden" right where they knew it was and sure enough, the brewski gods shined bright on 
 Larry and Dave on this particular day.
 
 (Press "Enter" to take a sip.)
@@ -180,7 +162,7 @@ Larry and Dave on this particular day.
     The two shared stories about their time working on moon base CRM-114, all the nonsense
 they both had to endure that simply didn't matter in the grand scheme of things, and then
 chatted about what Larry's life outside of the agency might look like. Larry wondered if
-they even made fishing rods anymore now that all meat back on Earth was lab-grown, but
+they even made fishing rods anymore now that all meat back on Earth was lab grown, but
 before he could get that thought out, Dave noticed something through one of the large bay
 windows.
 
@@ -192,8 +174,8 @@ see who it is."
     "Yeah. Let's bolt before anyone finds out what we're up to."
 
     The two made haste back to Larry's side of the base, finishing their last sips of oat
-soda along the way. As they got closer to the airlock by the maintenance dock, Larry
-noticed that his janitor cart wasn't properly stowed back in the closet.
+soda along the way. As they get closer to the airlock by the maintenance dock, Larry
+notices that his janitor cart hasn't been properly stowed back in the closet.
 
     "Huh... Rusty didn't finish cleaning up for the day," said Larry.
 
@@ -217,12 +199,12 @@ before.
     Dave found a corner of the dock that would keep him safe for the moment and Larry dove
 behind the only thing he could find: his janitor cart. Go figure... The one thing that
 symbolized his feeling of being trapped in a dead end job for so many years may actually
-be what saved him after all. He had everything he needed: A broom to use as a weapon, some
+be what saves him after all. He had everything he needed: A broom to use as a weapon, some
 spray bottles of cleaner that might do something, and a mobile shield in the cart itself.
 
     As he was taking stock of his surroundings, the real threat made itself known: Alien
-scouts. They must have intercepted transmissions talking about the break and figured that
-it would be the perfect time to try and commandeer the base.
+scouts. They must have known about the break and figured that it would be the perfect
+time to try and commandeer the base.
 
     "Dave, can you hear me?"
 
@@ -234,22 +216,18 @@ stations close by?" asked Larry.
     "Definitely. It'll take me a minute to run and get supplies, but I restocked all of
 them before everyone left. What happened with Rusty?"
 
-    "Those bastards must've hotwired him or something. I know his weak spots though. Look,
-I'll hold down the fort here. Just grab what you can and get back here ASAP!"
+    "Those bastards must've hotwired him or something. I know his weak spots though, so
+I'll take care of things here ."
 
     "Got it. I'll be back in a bit!"
-
-    Larry turned to fight, knowing that these three aliens and that old rust bucket were
-the only things standing between him and a lifetime of sipping mojitos while lounging
-poolside...
 ''')
 
 def main():
-    larry = Larry(10, 2)
-    dave = Dave(10, 2)
-    alien1 = Alien1(6, 1)
-    alien2 = Alien2(6, 1)
-    alien3 = Alien3(6, 1)
+    larry = Larry(10, 5)
+    dave = Dave(10, 5)
+    alien1 = Alien1(6, 2)
+    alien2 = Alien2(6, 2)
+    alien3 = Alien3(6, 2)
     rusty = Rusty(100, 1)
 
     print_title1()
@@ -260,25 +238,23 @@ def main():
         alien2.print_status()
         alien3.print_status()
         print()
-        print("What should Larry do?\n")
-        print("1. Fight an alien with his broom")
-        print("2. Spray an alien with various cleaning products")
-        print("3. Hide behind his cart")
-        print("4. Get a medpack from Dave")
-        print("5. Flee")
-        user_input = int(input("\nChoice: "))
+        print("What do you want to do?")
+        print("1. Fight an alien")
+        print("2. Do nothing")
+        print("3. Flee")
+        user_input = input("Choice: ")
         print()
-        if user_input == 1 or user_input == 2:
-            larry.attack(alien1, alien2, alien3)
-            if alien1.health > 0:
-                alien1.attack(larry)
-        elif user_input == 3:
+        if user_input == "1":
+            larry.attack(alien1)
+        elif user_input == "2":
             pass
-        elif user_input == 5:
+        elif user_input == "3":
             print("Goodbye.\n")
             break
         else:
             print(f"Invalid input: {user_input}")
             print()
+        if alien1.health > 0:
+            alien1.attack(larry)
 
 main()
