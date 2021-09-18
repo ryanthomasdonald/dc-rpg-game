@@ -1,96 +1,6 @@
 import time
 import random
 
-class Character():
-    def __init__(self, health, power):
-        self.health = health
-        self.power = power
-
-    def alive(self):
-        life = True
-        if self.health <= 0:
-            life = False
-        return life
-
-class Larry(Character):
-    def attack(self, alien1, alien2, alien3):
-        hit = random.randint(1, 5)
-        if hit == 1:
-            alien_hit = "first"
-            alien1.health -= self.power
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 2:
-            alien2.health -= self.power
-            alien_hit = "second"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 3:
-            alien3.health -= self.power
-            alien_hit = "third"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        else:
-            print("Larry missed.")
-        if alien1.health <= 0:
-            print("The alien is dead.")
-
-    def print_status(self):
-        print(f"Larry has {self.health} health and {self.power} power.")
-
-class Dave(Character):
-    def attack(self, alien1, alien2, alien3):
-        alien1.health -= self.power
-        alien2.health -= self.power
-        alien3.health -= self.power
-        print(f"You do {self.power} damage to the aliens.")
-        if alien1.health <= 0:
-            print("The first alien is dead.")
-        if alien2.health <= 0:
-            print("The second alien is dead.")
-        if alien3.health <= 0:
-            print("The third alien is dead.")
-
-    def print_status(self):
-        print(f"Dave has {self.health} health and {self.power} power.")
-
-class Alien1(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The first alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
-
-    def print_status(self):
-        print(f"The first alien has {self.health} health and {self.power} power.")
-
-class Alien2(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The second alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
-
-    def print_status(self):
-        print(f"The second alien has {self.health} health and {self.power} power.")
-
-class Alien3(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The third alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
-
-    def print_status(self):
-        print(f"The third alien has {self.health} health and {self.power} power.")
-
-class Rusty(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"Rusty does {self.power} damage to you.")
-        if larry.health <= 0:
-            print("You are dead.")
-
-    def print_status(self):
-        print(f"Rusty has {self.health} health and {self.power} power.")
-
 def print_title1():
     print('''
 
@@ -132,7 +42,7 @@ he may very well be indestructable.
     "Boy is it ever! I'll head over to the Officer's Quarters and see if they left any
 bottles of suds behind in the fridge. That sure was one hell of a party..."
 
-(Press "Enter" to walk to the Officer's Quarters.)
+(Press "Enter" to move Larry to the Officer's Quarters.)
 
     The best part about being the senior janitor was that Larry's keycard granted him full
 access to the entire base. (Another alien specimen exploded in the lab you say? "Someone go
@@ -171,7 +81,7 @@ friends paraded around feeling like kings, if only for a short while. The mini-f
 "hidden" right where they knew it was and sure enough, the brewski gods shined bright upon 
 Larry and Dave on this particular day.
 
-(Press "Enter" to take a sip.)
+(Press "Enter" to make Larry raid the mini-fridge.)
 
     "Light beer sure hits differently when it isn't yours," posited Larry.
 
@@ -214,6 +124,8 @@ before.
 
     "Just find something to hide behind!"
 
+(Press "Enter" to make Larry run for cover.)
+
     Dave found a corner of the dock that would keep him safe for the moment and Larry dove
 behind the only thing he could find: his janitor cart. Go figure... The one thing that
 symbolized his feeling of being trapped in a dead end job for so many years may actually
@@ -244,41 +156,161 @@ the only things standing between him and a lifetime of sipping mojitos while lou
 poolside...
 ''')
 
-def main():
-    larry = Larry(10, 2)
-    dave = Dave(10, 2)
-    alien1 = Alien1(6, 1)
-    alien2 = Alien2(6, 1)
-    alien3 = Alien3(6, 1)
-    rusty = Rusty(100, 1)
+class Character():
+    def __init__(self, health, power):
+        self.health = health
+        self.power = power
 
-    print_title1()
+    def alive(self, health):
+        self.health = health
+        life = True
+        if self.health <= 0:
+            life = False
+        return life
 
-    while (alien1.alive() or alien2.alive() or alien3.alive()) and larry.alive():
-        larry.print_status()
-        alien1.print_status()
-        alien2.print_status()
-        alien3.print_status()
-        print()
-        print("What should Larry do?\n")
-        print("1. Fight an alien with his broom")
-        print("2. Spray an alien with various cleaning products")
-        print("3. Hide behind his cart")
-        print("4. Get a medpack from Dave")
-        print("5. Flee")
-        user_input = int(input("\nChoice: "))
-        print()
-        if user_input == 1 or user_input == 2:
-            larry.attack(alien1, alien2, alien3)
+class Larry(Character):
+    def attack(self, alien1, alien2, alien3):
+        hit = random.randint(1, 4)
+        if hit == 1:
+            alien_hit = "first"
+            alien1.health -= self.power
+            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
+        elif hit == 2:
+            alien2.health -= self.power
+            alien_hit = "second"
+            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
+        elif hit == 3:
+            alien3.health -= self.power
+            alien_hit = "third"
+            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
+        else:
+            print("Larry missed.")
+
+    def print_status(self):
+        print(f"Larry has {self.health} health and {self.power} power.")
+
+class Dave(Character):
+    def attack(self, alien1, alien2, alien3):
+        alien1.health -= self.power
+        alien2.health -= self.power
+        alien3.health -= self.power
+        print(f"You do {self.power} damage to the aliens.")
+        if alien1.health <= 0:
+            print("The first alien is dead.")
+        if alien2.health <= 0:
+            print("The second alien is dead.")
+        if alien3.health <= 0:
+            print("The third alien is dead.")
+
+    def print_status(self):
+        print(f"Dave has {self.health} health and {self.power} power.")
+
+class Alien1(Character):
+    def attack(self, larry):
+        larry.health -= self.power
+        print(f"The first alien does {self.power} damage to Larry.")
+        if larry.health <= 0:
+            print("Larry retired prematurely.")
+
+    def print_status(self):
+        if self.health > 0:
+            print(f"The first alien has {self.health} health and {self.power} power.")
+        else:
+            print("The first alien is dead.")
+
+class Alien2(Character):
+    def attack(self, larry):
+        larry.health -= self.power
+        print(f"The second alien does {self.power} damage to Larry.")
+        if larry.health <= 0:
+            print("Larry retired prematurely.")
+
+    def print_status(self):
+        if self.health > 0:
+            print(f"The second alien has {self.health} health and {self.power} power.")
+        else:
+            print("The second alien is dead.")
+
+class Alien3(Character):
+    def attack(self, larry):
+        larry.health -= self.power
+        print(f"The third alien does {self.power} damage to Larry.")
+        if larry.health <= 0:
+            print("Larry retired prematurely.")
+
+    def print_status(self):
+        if self.health > 0:
+            print(f"The third alien has {self.health} health and {self.power} power.")
+        else:
+            print("The third alien is dead.")
+
+class Rusty(Character):
+    def attack(self, larry):
+        larry.health -= self.power
+        print(f"Rusty does {self.power} damage to you.")
+        if larry.health <= 0:
+            print("You are dead.")
+
+    def print_status(self):
+        print(f"Rusty has {self.health} health and {self.power} power.")
+
+larry = Larry(10, 5)
+dave = Dave(10, 2)
+alien1 = Alien1(6, 1)
+alien2 = Alien2(6, 1)
+alien3 = Alien3(6, 1)
+rusty = Rusty(100, 1)
+
+print("""
+
+This game requires a Terminal with a width of at least 95 characters and a height of at 
+least 40 lines. If you are experiencing formatting errors, please resize your window now.
+
+""")
+
+dummy_key = input('Press "Enter" to continue.')
+
+print_title1()
+
+while (alien1.alive(alien1.health) == True or alien2.alive(alien2.health) == True or alien3.alive(alien3.health) == True) and larry.alive(larry.health) == True:
+    larry.print_status()
+    alien1.print_status()
+    alien2.print_status()
+    alien3.print_status()
+    print()
+    print("What should Larry do?\n")
+    print("1. Whack an alien with his broom")
+    print("2. Spray an alien with various cleaning products")
+    print("3. Hide behind his cart")
+    print("4. Get a medpack from Dave")
+    print("5. Surrender")
+    user_input = input("\nEnter a number: ")
+    print()
+    if user_input == "1" or user_input == "2":
+        larry.attack(alien1, alien2, alien3)
+        attacking_alien = random.randint(1, 3)
+        if attacking_alien == 1:
+            if alien1.health <= 0:
+                attacking_alien == 2
+            else:
+                alien1.attack(larry)
+        elif attacking_alien == 2:
+            if alien2.health <= 0:
+                attacking_alien == 3
+            else:
+                alien2.attack(larry)
+        elif attacking_alien == 3:
+            if alien3.health <= 0:
+                attacking_alien == 1
+            else:
+                alien3.attack(larry)
+        elif attacking_alien == 1:
             if alien1.health > 0:
                 alien1.attack(larry)
-        elif user_input == 3:
-            pass
-        elif user_input == 5:
-            print("Goodbye.\n")
-            break
-        else:
-            print(f"Invalid input: {user_input}")
-            print()
-
-main()
+    elif user_input == "3":
+        pass
+    elif user_input == "5":
+        print("Never give up! Never surrender!\n")
+    else:
+        print(f"Invalid input: {user_input}")
+        print()
