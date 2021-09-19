@@ -1,21 +1,20 @@
 import time
 import random
 
-def print_title1():
-    print('''
+word_its = '''IT'S'''
 
-It's time for...
+word_time = '''                                        TIME'''
 
+word_for = '''                                                                                FOR...'''
 
-   ██╗      █████╗ ██████╗ ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗███████╗███████╗████████╗
-   ██║     ██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝
-   ██║     ███████║██████╔╝██████╔╝ ╚████╔╝ ██║   ██║██║   ██║█████╗  ███████╗   ██║   
-   ██║     ██╔══██║██╔══██╗██╔══██╗  ╚██╔╝  ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   
-   ███████╗██║  ██║██║  ██║██║  ██║   ██║   ╚██████╔╝╚██████╔╝███████╗███████║   ██║   
-   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   
+title1 = '''   ██╗      █████╗ ██████╗ ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗███████╗███████╗████████╗'''
+title2 = '''   ██║     ██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝'''
+title3 = '''   ██║     ███████║██████╔╝██████╔╝ ╚████╔╝ ██║   ██║██║   ██║█████╗  ███████╗   ██║   '''
+title4 = '''   ██║     ██╔══██║██╔══██╗██╔══██╗  ╚██╔╝  ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   '''
+title5 = '''   ███████╗██║  ██║██║  ██║██║  ██║   ██║   ╚██████╔╝╚██████╔╝███████╗███████║   ██║   '''
+title6 = '''   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   '''
 
-
-    Somewhere, in the outer reaches of deep space, a janitor named Larry could count down
+text1 = '''    Somewhere, in the outer reaches of deep space, a janitor named Larry could count down
 the days to retirement on one hand.
 
     "It's hard to believe I've got less than a week left," Larry muttered to himself while
@@ -37,13 +36,16 @@ he may very well be indestructable.
     
     "01010100 01101001 01101101 01100101 00100000 01100110 01101111 01110010 00100000 
 01100001 00100000 01100011 01101111 01101100 01100100 00100000 01101111 01101110 01100101
-00100001 00100001 00100001," Rusty beeped.
+00100001," Rusty beeped.
     
     "Boy is it ever! I'll head over to the Officer's Quarters and see if they left any
 bottles of suds behind in the fridge. That sure was one hell of a party..."
 
-(Press "Enter" to move Larry to the Officer's Quarters.)
+'''
 
+# (Press "Enter" to move Larry to the Officer's Quarters.)
+
+text2 = '''
     The best part about being the senior janitor was that Larry's keycard granted him full
 access to the entire base. (Another alien specimen exploded in the lab you say? "Someone go
 find Larry." Someone puked in the anti-gravity chamber again? "Say no more! Larry's on it!")
@@ -62,7 +64,7 @@ for sure.
 
     "Terribly sorry about that, bud," said Dave. "They must've turned the lights out to save
 power over the break. Damn... I guess I overslept and missed the shuttle. Well anyway, what
-are you doing all the way out here? I thought they closed this wing down before the party..."
+are you doing all the way out here? I thought they closed this wing down before the party."
 
     "I'm headed over to the Officer's Quarters to see if they left any beers in that mini-
 fridge that they think is a secret."
@@ -81,8 +83,11 @@ friends paraded around feeling like kings, if only for a short while. The mini-f
 "hidden" right where they knew it was and sure enough, the brewski gods shined bright upon 
 Larry and Dave on this particular day.
 
-(Press "Enter" to make Larry raid the mini-fridge.)
+'''
 
+# (Press "Enter" to make Larry raid the mini-fridge.)
+
+text3 = '''
     "Light beer sure hits differently when it isn't yours," posited Larry.
 
     "You said it, man. The tastiest style of beer is free beer."
@@ -90,7 +95,7 @@ Larry and Dave on this particular day.
     The two shared stories about their time working on moon base CRM-114, all the nonsense
 they both had to endure that simply didn't matter in the grand scheme of things, and then
 chatted about what Larry's life outside of the agency might look like. Larry wondered if
-they even made fishing rods anymore now that all meat back on Earth was lab-grown, but
+they even made fishing rods anymore now that all the meat back on Earth was lab-grown, but
 before he could get that thought out, Dave noticed something through one of the large bay
 windows.
 
@@ -124,8 +129,11 @@ before.
 
     "Just find something to hide behind!"
 
-(Press "Enter" to make Larry run for cover.)
+'''
 
+# (Press "Enter" to make Larry run for cover.)
+
+text4 = '''
     Dave found a corner of the dock that would keep him safe for the moment and Larry dove
 behind the only thing he could find: his janitor cart. Go figure... The one thing that
 symbolized his feeling of being trapped in a dead end job for so many years may actually
@@ -146,7 +154,7 @@ stations close by?" asked Larry.
     "Definitely. It'll take me a minute to run and get supplies, but I restocked all of
 them before everyone left. What happened with Rusty?"
 
-    "Those bastards must've hotwired him or something. I know his weak spots though. Look,
+    "Those bastards must've rewired him or something. I know his weak spots though. Look,
 I'll hold down the fort here. Just grab what you can and get back here ASAP!"
 
     "Got it. I'll be back in a bit!"
@@ -154,9 +162,57 @@ I'll hold down the fort here. Just grab what you can and get back here ASAP!"
     Larry turned to fight, knowing that these three aliens and that old rust bucket were
 the only things standing between him and a lifetime of sipping mojitos while lounging
 poolside...
-''')
 
-class Character():
+'''
+
+text5 = '''
+    "Hey assholes!!!", shouted Larry.
+
+    He threw his empty beer bottle at the scouts as hard as he could, hitting the first
+alien scout square in the head. He figured that making the first move couldn't hurt, being
+that he could almost taste the mojitos...
+
+'''
+
+# Text Printing Functions
+def type_print(string):
+    for i in string:
+        print(i, end = '', flush = True)
+        time.sleep(0.0325)
+
+def fast_type_print(string):
+    for i in string:
+        print(i, end = '', flush = True)
+        time.sleep(0.01)
+
+# Parent Character Classes
+class Human():
+    def __init__(self, health, broom_power, spray_power):
+        self.health = health
+        self.broom_power = broom_power
+        self.spray_power = spray_power
+
+    def alive(self, health):
+        self.health = health
+        life = True
+        if self.health <= 0:
+            life = False
+        return life
+
+class Alien():
+    def __init__(self, health, armor, power):
+        self.health = health
+        self.armor = armor
+        self.power = power
+
+    def alive(self, health):
+        self.health = health
+        life = True
+        if self.health <= 0:
+            life = False
+        return life
+
+class Robot():
     def __init__(self, health, power):
         self.health = health
         self.power = power
@@ -168,149 +224,264 @@ class Character():
             life = False
         return life
 
-class Larry(Character):
-    def attack(self, alien1, alien2, alien3):
+# Child Characters
+class Larry(Human):
+    def attack_alien1(self, alien1):
         hit = random.randint(1, 4)
-        if hit == 1:
-            alien_hit = "first"
-            alien1.health -= self.power
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 2:
-            alien2.health -= self.power
-            alien_hit = "second"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
-        elif hit == 3:
-            alien3.health -= self.power
-            alien_hit = "third"
-            print(f"Larry does {self.power} damage to the {alien_hit} alien.")
+        if hit != 2:
+            alien1.health -= self.broom_power
+            fast_type_print(f"Larry does {self.broom_power} damage to the first alien.\n\n")
         else:
-            print("Larry missed.")
+            fast_type_print("Larry misses.\n\n")
+
+    def attack_alien2(self, alien2):
+        hit = random.randint(1, 4)
+        if hit != 2:
+            alien2.health -= self.broom_power
+            fast_type_print(f"Larry does {self.broom_power} damage to the second alien.\n\n")
+        else:
+            fast_type_print("Larry misses.\n\n")
+
+    def attack_alien3(self, alien3):
+        hit = random.randint(1, 4)
+        if hit != 2:
+            alien3.health -= self.broom_power
+            fast_type_print(f"Larry does {self.broom_power} damage to the third alien.\n\n")
+        else:
+            fast_type_print("Larry misses.\n\n")
+    
+    def spray(self, alien1, alien2, alien3):
+        alien1.armor -= self.spray_power
+        alien2.armor -= self.spray_power
+        alien3.armor -= self.spray_power
+        fast_type_print(f"Larry's various cleaning products reduce each alien's armor by {self.spray_power}.\n\n")
+
+    # def use_medpack(self, medpack):
+    #     medpack.health = medpack
+    #     larry.health += medpack.health
+        # self.health = health
+        # larry.health += medpack.health
+        # fast_type_print(f"Larry's health increased to {larry.health}.\n\n")
 
     def print_status(self):
-        print(f"Larry has {self.health} health and {self.power} power.")
+        fast_type_print(f"Larry has {self.health} health. His broom deals {self.broom_power} damage.\n")
 
-class Dave(Character):
-    def attack(self, alien1, alien2, alien3):
-        alien1.health -= self.power
-        alien2.health -= self.power
-        alien3.health -= self.power
-        print(f"You do {self.power} damage to the aliens.")
-        if alien1.health <= 0:
-            print("The first alien is dead.")
-        if alien2.health <= 0:
-            print("The second alien is dead.")
-        if alien3.health <= 0:
-            print("The third alien is dead.")
+class Dave(Human):
+    pass
+    # def attack(self, alien1, alien2, alien3):
+    #     alien1.health -= self.power
+    #     alien2.health -= self.power
+    #     alien3.health -= self.power
+    #     print(f"Dave does {self.power} damage to the aliens.\n")
+    #     if alien1.health <= 0:
+    #         fast_type_print("The first alien is dead.\n")
+    #     if alien2.health <= 0:
+    #         fast_type_print("The second alien is dead.\n")
+    #     if alien3.health <= 0:
+    #         fast_type_print("The third alien is dead.\n")
 
-    def print_status(self):
-        print(f"Dave has {self.health} health and {self.power} power.")
+    # def print_status(self):
+    #     fast_type_print(f"Dave has {self.health} health and {self.power} power.\n")
 
-class Alien1(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The first alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
+class Alien1(Alien):
+    def attack_larry(self, larry):
+        hit = random.randint(1, 3)
+        if hit != 2:
+            larry.health -= self.power
+            fast_type_print(f"The first alien does {self.power} damage to Larry.\n\n")
+            if larry.health <= 0:
+                fast_type_print("Larry retired prematurely.\n\n")
+        else:
+            fast_type_print("The first alien misses.\n\n")
 
     def print_status(self):
         if self.health > 0:
-            print(f"The first alien has {self.health} health and {self.power} power.")
+            fast_type_print(f"The first alien has {self.health} health, {self.armor} armor, and deals {self.power} damage.\n")
         else:
-            print("The first alien is dead.")
+            fast_type_print("The first alien is dead.\n")
 
-class Alien2(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The second alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
+class Alien2(Alien):
+    def attack_larry(self, larry):
+        hit = random.randint(1, 3)
+        if hit != 2:
+            larry.health -= self.power
+            fast_type_print(f"The second alien does {self.power} damage to Larry.\n\n")
+            if larry.health <= 0:
+                fast_type_print("Larry retired prematurely.\n\n")
+        else:
+            fast_type_print("The second alien misses.\n\n")
 
     def print_status(self):
         if self.health > 0:
-            print(f"The second alien has {self.health} health and {self.power} power.")
+            fast_type_print(f"The second alien has {self.health} health, {self.armor} armor, and deals {self.power} damage.\n")
         else:
-            print("The second alien is dead.")
+            fast_type_print("The second alien is dead.\n")
 
-class Alien3(Character):
-    def attack(self, larry):
-        larry.health -= self.power
-        print(f"The third alien does {self.power} damage to Larry.")
-        if larry.health <= 0:
-            print("Larry retired prematurely.")
+class Alien3(Alien):
+    def attack_larry(self, larry):
+        hit = random.randint(1, 3)
+        if hit != 2:
+            larry.health -= self.power
+            fast_type_print(f"The third alien does {self.power} damage to Larry.\n\n")
+            if larry.health <= 0:
+                fast_type_print("Larry retired prematurely.\n\n")
+        else:
+            fast_type_print("The third alien misses.\n\n")
 
     def print_status(self):
         if self.health > 0:
-            print(f"The third alien has {self.health} health and {self.power} power.")
+            fast_type_print(f"The third alien has {self.health} health, {self.armor} armor, and deals {self.power} damage..\n")
         else:
-            print("The third alien is dead.")
+            fast_type_print("The third alien is dead.\n")
 
-class Rusty(Character):
-    def attack(self, larry):
+class Rusty(Robot):
+    def attack_larry(self, larry):
         larry.health -= self.power
-        print(f"Rusty does {self.power} damage to you.")
+        fast_type_print(f"Rusty does {self.power} damage to you.\n\n")
         if larry.health <= 0:
-            print("You are dead.")
+            fast_type_print("Larry retired prematurely.\n\n")
 
     def print_status(self):
-        print(f"Rusty has {self.health} health and {self.power} power.")
+        fast_type_print(f"Rusty has {self.health} health and deals {self.power} damage..\n")
 
-larry = Larry(10, 5)
-dave = Dave(10, 2)
-alien1 = Alien1(6, 1)
-alien2 = Alien2(6, 1)
-alien3 = Alien3(6, 1)
+# Items
+# class Item():
+#     def __init__(self):
+#         pass
+
+class Medpack():
+    def __init__(self, health):
+        self.health = health
+
+    def use_medpack(self):
+        larry.health += self.health
+        fast_type_print(f"Larry's health increased to {larry.health}.\n\n")
+
+# Larry's Cart
+class Cart():
+    def __init__(self, cart_life):
+        self.cart_life = cart_life
+    
+    def print_status(self):
+        fast_type_print(f"Larry's cart can take {self.cart_life} more hits.\n")
+
+
+# Main Gameplay Loop
+larry = Larry(10, 2, 1)
+# dave = Dave(10, 1, 0)
+alien1 = Alien1(5, 5, 1)
+alien2 = Alien2(6, 5, 1)
+alien3 = Alien3(6, 5, 1)
 rusty = Rusty(100, 1)
+cart = Cart(25)
+medpack = Medpack(2)
 
-print("""
+fast_type_print("""
 
-This game requires a Terminal with a width of at least 95 characters and a height of at 
-least 40 lines. If you are experiencing formatting errors, please resize your window now.
+This game requires a Terminal with a width of at least 92 characters and a height of at 
+least 42 lines. If you are experiencing formatting errors, please resize your window now.
+
 
 """)
 
 dummy_key = input('Press "Enter" to continue.')
 
-print_title1()
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print(word_its)
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print(word_time)
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print(word_for)
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print(title1)
+time.sleep(0.6)
+print(title2)
+time.sleep(0.6)
+print(title3)
+time.sleep(0.6)
+print(title4)
+time.sleep(0.6)
+print(title5)
+time.sleep(0.6)
+print(title6)
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+print()
+time.sleep(0.6)
+type_print(text1)
+dummy_key = input('''                 Press "Enter" to move Larry to the Officer\'s Quarters.''')
+type_print(text2)
+dummy_key = input('''                   Press "Enter" to make Larry raid the mini-fridge.''')
+type_print(text3)
+dummy_key = input('''                       Press "Enter" to make Larry run for cover.''')
+type_print(text4)
+dummy_key = input('''                 Press "Enter" to make Larry throw his empty beer bottle.''')
+type_print(text5)
 
 while (alien1.alive(alien1.health) == True or alien2.alive(alien2.health) == True or alien3.alive(alien3.health) == True) and larry.alive(larry.health) == True:
     larry.print_status()
+    cart.print_status()
     alien1.print_status()
     alien2.print_status()
     alien3.print_status()
     print()
-    print("What should Larry do?\n")
-    print("1. Whack an alien with his broom")
-    print("2. Spray an alien with various cleaning products")
-    print("3. Hide behind his cart")
-    print("4. Get a medpack from Dave")
-    print("5. Surrender")
+    fast_type_print("What should Larry do?\n\n")
+    fast_type_print("1. Whack the first alien with his broom\n")
+    fast_type_print("2. Whack the second alien with his broom\n")
+    fast_type_print("3. Whack the third alien with his broom\n")
+    fast_type_print("4. Spray the aliens with various cleaning products\n")
+    fast_type_print("5. Get a medpack from Dave and use it behind his cart\n")
+    fast_type_print("6. Send Dave out to grab more supplies (burns a turn)\n")
+    fast_type_print("7. Attempt to rewire Rusty to be back on his side\n")
+    fast_type_print("8. Surrender\n")
     user_input = input("\nEnter a number: ")
     print()
-    if user_input == "1" or user_input == "2":
-        larry.attack(alien1, alien2, alien3)
-        attacking_alien = random.randint(1, 3)
-        if attacking_alien == 1:
-            if alien1.health <= 0:
-                attacking_alien == 2
-            else:
-                alien1.attack(larry)
-        elif attacking_alien == 2:
-            if alien2.health <= 0:
-                attacking_alien == 3
-            else:
-                alien2.attack(larry)
-        elif attacking_alien == 3:
-            if alien3.health <= 0:
-                attacking_alien == 1
-            else:
-                alien3.attack(larry)
-        elif attacking_alien == 1:
-            if alien1.health > 0:
-                alien1.attack(larry)
+    if user_input == "1":
+        larry.attack_alien1(alien1)
+        alien1.attack_larry(larry)
+        alien2.attack_larry(larry)
+        alien3.attack_larry(larry)
+    elif user_input == "2":
+        larry.attack_alien2(alien2)
+        alien1.attack_larry(larry)
+        alien2.attack_larry(larry)
+        alien3.attack_larry(larry)
     elif user_input == "3":
-        pass
+        larry.attack_alien3(alien3)
+        alien1.attack_larry(larry)
+        alien2.attack_larry(larry)
+        alien3.attack_larry(larry)
+    elif user_input == "4":
+        larry.spray(alien1, alien2, alien3)
+        alien1.attack_larry(larry)
+        alien2.attack_larry(larry)
+        alien3.attack_larry(larry)
     elif user_input == "5":
-        print("Never give up! Never surrender!\n")
+        medpack.use_medpack()
+        # alien1.attack_cart()
+        # alien2.attack_cart()
+        # alien3.attack_cart()
+    elif user_input == "6":
+        pass
+        # alien1.attack_cart()
+        # alien2.attack_cart()
+        # alien3.attack_cart()
+    elif user_input == "7":
+        pass
+    elif user_input == "8":
+        fast_type_print("Never give up! Never surrender!\n\n")
     else:
-        print(f"Invalid input: {user_input}")
-        print()
+        fast_type_print(f"Invalid input: {user_input}\n\n")
